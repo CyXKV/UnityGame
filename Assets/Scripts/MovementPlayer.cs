@@ -10,7 +10,7 @@ public class MovementPlayer : MonoBehaviour
     public Transform cam;
     public Rigidbody rb;
     public float fallSpeed = -5f;
-    public Animator anim;
+   /* public Animator anim;*/
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class MovementPlayer : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            anim.SetBool("isRun",true);
+           /* anim.SetBool("isRun",true);*/
 
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -35,7 +35,7 @@ public class MovementPlayer : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isRun", false);
+           /* anim.SetBool("isRun", false);*/
             rb.velocity = new Vector3(0f, rb.velocity.y, 0f); // Оставляем текущую скорость падения
         }
 
